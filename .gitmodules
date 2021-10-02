@@ -1,0 +1,3 @@
+[submodule "themes/hst"]
+	path = themes/hst
+	url = git@github.com:njkevlani/hst
