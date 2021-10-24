@@ -6,6 +6,9 @@ enableGitInfo = true
 [author]
   name = "Nilesh Kevlani"
 
+[params]
+  siteGitRepo = "https://github.com/njkevlani/njkevlani.github.io"
+
 [menu]
 
   [[menu.main]]
