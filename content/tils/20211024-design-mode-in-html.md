@@ -1,6 +1,7 @@
 +++
 title = "designMode in HTML"
 date = 2021-10-24
+lastmod = 2021-10-24
 tags = ['html', 'inspect-elements']
 tiltags = ['html', 'inspect-elements']
 +++

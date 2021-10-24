@@ -9,6 +9,9 @@ enableGitInfo = true
 [params]
   siteGitRepo = "https://github.com/njkevlani/njkevlani.github.io"
 
+[frontmatter]
+  lastmod = ["lastmod", ":git"]
+
 [menu]
 
   [[menu.main]]
