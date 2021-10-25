@@ -47,8 +47,8 @@ enableGitInfo = true
 [permalinks]
   blogtags = "/blogs/tags/:slug"
   tiltags = "/tils/tags/:slug"
-  tils = ":title"
-  blogs = ":title"
+  tils = "tils/:title"
+  blogs = "blogs/:title"
 
 [outputs]
     section = ["HTML"]
