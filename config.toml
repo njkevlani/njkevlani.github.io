@@ -7,7 +7,10 @@ enableGitInfo = true
   name = "Nilesh Kevlani"
 
 [params]
-  siteGitRepo = "https://github.com/njkevlani/njkevlani.github.io"
+  [params.postHistory]
+    enabled = true
+    siteGitRepo = "https://github.com/njkevlani/njkevlani.github.io"
+    contentDirRelativeToGitRepoRoot = "content"
 
 [frontmatter]
   lastmod = ["lastmod", ":git"]
