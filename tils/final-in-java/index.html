@@ -1,0 +1,80 @@
+<!doctype html><html lang=en><head><title>Final in Java</title><meta charset=utf-8><meta name=viewport content="width=device-width"><link rel=stylesheet href=/css/style.min.f87ad246dfbb0c8c5e04f0856890078d63e9319a14d22fd417d738c7350b8f075c6915516f94ed206af68e27dece8d5e82e4f6662205f2f324522812aa3ddb2d.css integrity="sha512-+HrSRt+7DIxeBPCFaJAHjWPpMZoU0i/UF9c4xzULjwdcaRVRb5TtIGr2jifezo1eguT2ZiIF8vMkUigSqj3bLQ=="></head><body><nav><span class=nowrap>[ <a class=nav-btn href=/>Home</a> ]</span><span class=nowrap>[ <a class=nav-btn href=/blogs/>Blogs</a> ]</span><span class=nowrap>[ <a class=nav-btn href=/tils/>TILs</a> ]</span><span class=nowrap>[ <a class=nav-btn href=/tags/>Tags</a> ]</span><span class=nowrap>[ <a class=nav-btn href=/links/>Links</a> ]</span></nav><section><header><h1>Final in Java</h1></header><div class=posted-by>Posted on 2021-12-15.
+Approx 300 words.
+Approx 1 minutes read.<br>Tags:
+<a class="btn btn-sm btn-outline-dark tag-btn" href=https://njkevlani.github.io/tags/java>#java</a>
+<a class="btn btn-sm btn-outline-dark tag-btn" href=https://njkevlani.github.io/tags/json>#json</a>
+<a class="btn btn-sm btn-outline-dark tag-btn" href=https://njkevlani.github.io/tags/serialisation>#serialisation</a></div><p>In <code>java</code>, normally you'd think if a variable is defined as <code>final</code>, it's value will not change.</p><p>For example, content of <code>Main.java</code>:</p><div class=highlight><div style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#00a>public</span> <span style=color:#00a>class</span> <span style=color:#0a0;text-decoration:underline>Main</span> {
+  <span style=color:#00a>public</span> <span style=color:#00a>static</span> <span style=color:#0aa>void</span> <span style=color:#0a0>main</span>(String... args) {
+    Example example = <span style=color:#00a>new</span> Example();
+    example.<span style=color:#1e90ff>printI</span>();
+  }
+}
+
+<span style=color:#00a>class</span> <span style=color:#0a0;text-decoration:underline>Example</span> {
+  <span style=color:#00a>final</span> <span style=color:#00a>private</span> Integer i = 10;
+  <span style=color:#00a>public</span> <span style=color:#0aa>void</span> <span style=color:#0a0>printI</span>() {
+    System.<span style=color:#1e90ff>out</span>.<span style=color:#1e90ff>println</span>(i);
+  }
+}
+</code></pre></td></tr></table></div></div><p>Above code should always print <code>10</code> right? Well, that not's the case. At least in this case:</p><div class=highlight><div style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#00a>import</span> <span style=color:#0aa;text-decoration:underline>com.fasterxml.jackson.databind.ObjectMapper</span>;
+
+<span style=color:#00a>import</span> <span style=color:#0aa;text-decoration:underline>java.io.IOException</span>;
+
+<span style=color:#00a>public</span> <span style=color:#00a>class</span> <span style=color:#0a0;text-decoration:underline>Main</span> {
+    <span style=color:#00a>public</span> <span style=color:#00a>static</span> <span style=color:#0aa>void</span> <span style=color:#0a0>main</span>(String... args) <span style=color:#00a>throws</span> IOException {
+        Example example1 = <span style=color:#00a>new</span> Example();
+        example1.<span style=color:#1e90ff>printI</span>();
+
+        ObjectMapper mapper = <span style=color:#00a>new</span> ObjectMapper();
+        String jsonInString = <span style=color:#a50>&#34;{\&#34;i\&#34;: 11}&#34;</span>;
+        Example example2 = mapper.<span style=color:#1e90ff>reader</span>().<span style=color:#1e90ff>withType</span>(Example.<span style=color:#1e90ff>class</span>).<span style=color:#1e90ff>readValue</span>(jsonInString);
+        example2.<span style=color:#1e90ff>printI</span>();
+    }
+}
+
+<span style=color:#00a>class</span> <span style=color:#0a0;text-decoration:underline>Example</span> {
+    <span style=color:#00a>public</span> <span style=color:#00a>final</span> Integer i = 10;
+
+    <span style=color:#00a>public</span> <span style=color:#0aa>void</span> <span style=color:#0a0>printI</span>() {
+        System.<span style=color:#1e90ff>out</span>.<span style=color:#1e90ff>println</span>(i);
+    }
+}
+</code></pre></td></tr></table></div></div><p>This will print</p><pre><code>10
+11
+</code></pre><p>Reason for this?</p><blockquote><p>Deserialization is implemented by the JVM on a level below the basic language constructs.<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p></blockquote><p>So, language rules does not apply to JVM. Object was initalized with <code>i = 10</code> and it was updated while deserialization despite being <code>final</code>.</p><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p><a href=https://stackoverflow.com/a/2904589/6645446>https://stackoverflow.com/a/2904589/6645446</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></section><footer class=footer><hr>&copy; 2021 Nilesh Kevlani &#183; Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/njkevlani/hst/>hst</a>.</footer></body></html>
