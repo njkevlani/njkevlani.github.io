@@ -65,4 +65,6 @@ Reason for this?
 
 So, language rules do not apply to JVM. The object was initialized with `i = 10` and it was updated while deserialization despite being `final`.
 
+Code sample on GitHub: https://github.com/njkevlani/final-in-java-code.
+
 [^1]: https://stackoverflow.com/a/2904589/6645446
