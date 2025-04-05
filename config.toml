@@ -3,7 +3,7 @@ theme = "hst"
 enableEmoji = true
 enableGitInfo = true
 
-[author]
+[params.author]
   name = "Nilesh Kevlani"
 
 [params]
@@ -55,7 +55,6 @@ enableGitInfo = true
 
 [outputs]
     section = ["HTML"]
-    taxonomyTerm = ["HTML"]
     taxonomy = ["HTML"]
 
 [outputFormats]
