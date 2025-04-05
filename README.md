@@ -1,2 +1,17 @@
 # njkevlani.github.io
-My Personal Website
+Personal Website
+
+Live at https://njkevlani.dev.
+
+## Running locally
+
+```shell
+hugo server --minify
+```
+
+## Building locally
+
+```shell
+hugo --minify
+```
+
