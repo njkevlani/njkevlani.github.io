@@ -44,18 +44,11 @@ enableGitInfo = true
 
 [taxonomies]
   tag = "tags"
-  blogtag = "blogtags"
-  tiltag = "tiltags"
-
-[permalinks]
-  blogtags = "/blogs/tags/:slug"
-  tiltags = "/tils/tags/:slug"
-  tils = "tils/:title"
-  blogs = "blogs/:title"
 
 [outputs]
     section = ["HTML"]
     taxonomy = ["HTML"]
+    term = ["HTML"]
 
 [outputFormats]
   [outputFormats.RSS]

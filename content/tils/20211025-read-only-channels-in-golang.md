@@ -3,7 +3,6 @@ title = "Read-only Channels in Golang"
 date = 2021-10-25
 lastmod = 2021-10-25
 tags = ["golang"]
-tiltags = ["golang"]
 +++
 
 In golang, channels can be defined as read-only, write-only or read-write.

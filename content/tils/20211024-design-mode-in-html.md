@@ -3,7 +3,6 @@ title = "designMode in HTML"
 date = 2021-10-24
 lastmod = 2021-10-24
 tags = ['html', 'inspect-elements']
-tiltags = ['html', 'inspect-elements']
 +++
 
 You can edit text in HTML by pasting this in console in inspect elements.
