@@ -1,4 +1,4 @@
-# njkevlani.github.io
+# njkevlani.dev
 Personal Website
 
 Live at https://njkevlani.dev.

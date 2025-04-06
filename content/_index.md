@@ -14,7 +14,7 @@ Right now I'm working with the Platform Team at [ShareChat](https://sharechat.co
 
 Before ShareChat, I was working with [Rzorpay](https://razorpay.com) and [Crewkarma](https://crewkarma.com).
 
-Check out my resume for more details at https://njkevlani.github.io/resume or PDF version at https://njkevlani.github.io/resume/pdf
+Check out my resume for more details at https://njkevlani.dev/resume or PDF version at https://njkevlani.dev/resume/pdf
 
 I try to write a few insightful things that I learn in my day-to-day life and document them here. Check out the `Blogs` and `TILs` sections above for them ^.
 
