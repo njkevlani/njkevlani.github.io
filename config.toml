@@ -37,11 +37,6 @@ enableGitInfo = true
     url = "/tags/"
     weight = 4
 
-  [[menu.main]]
-    name = "Links"
-    url = "/links/"
-    weight = 5
-
 [taxonomies]
   tag = "tags"
 
