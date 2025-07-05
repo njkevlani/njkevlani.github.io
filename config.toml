@@ -1,5 +1,4 @@
 baseURL = "https://njkevlani.dev"
-theme = "hst"
 enableEmoji = true
 enableGitInfo = true
 
