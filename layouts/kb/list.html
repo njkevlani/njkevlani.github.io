@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section>
+  <h1>{{ if eq .Kind "term" }}#{{ end }}{{ .Title }}</h1>
+
+  <hr />
+
+  {{ with .Content }}
+  {{ . }}
+  <hr />
+  {{ end }}
+
+  {{ if gt (len .Pages) 0 }}
+    <ul>
+      {{ range .Pages }}
+        {{ $nameToShow := .Title }}
+
+        {{ if eq (len $nameToShow) 0 }}
+          {{ $nameToShow = .File.ContentBaseName }}
+        {{ end }}
+
+        <li>
+          <a href="{{ .RelPermalink }}">{{ $nameToShow }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    Nothing in here at the moment.
+  {{ end }}
+</section>
+{{ end }}
