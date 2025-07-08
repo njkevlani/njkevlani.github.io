@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=../resume-schema.yaml
+---
 Name: Nilesh Kevlani
 Title: Software Engineer
 Location: Bangalore, India
@@ -112,7 +113,7 @@ Sections:
   - Type: MarkdownSection
     Title: OPEN SOURCE CONTRIBUTIONS
     Content: |
-      - [hst](https://github.com/njkevlani/hst) - A simple [hugo](https://gohugo.io) theme. 
+      - [hst](https://github.com/njkevlani/hst) - A simple [hugo](https://gohugo.io) theme.
       - [Driveload](https://github.com/njkevlani/driveload) - A GitHub action that downloads file from the Internet and uploads it to Google Drive.
       - [Tabbit](https://github.com/njkevlani/tabbit) - A simple reddit web client with vim like keybindings.
       - [Contibutions](https://github.com/scikit-learn/scikit-learn/pulls?q=is%3Apr+author%3Anjkevlani) in [scikit-learn](https://scikit-learn.org/).
