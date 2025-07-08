@@ -6,3 +6,4 @@
 - [ ] unify css.
 - [ ] add last updated at in kb pages.
 - [ ] changes in post meta data in all sections.
+- [ ] Disable rss for everything except writing/blog.
