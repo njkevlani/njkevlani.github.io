@@ -4,7 +4,8 @@
     <meta name="viewport" content="width=device-width">
     <link rel="canonical" href="{{ .Permalink }}">
 
-    <link rel="stylesheet" href="https://njkevlani.dev/css/style.css">
+    {{ $stylemain := resources.Get "css/style.css" | minify | fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $stylemain.RelPermalink }}" integrity="{{ $stylemain.Data.Integrity }}">
 
 </head>
 <!-- TODO SEO -->
