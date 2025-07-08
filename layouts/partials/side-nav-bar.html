@@ -1,0 +1,47 @@
+{{ $currentPage := .currentPage }}
+{{ $siteSections := .pages }}
+
+<ul class="for-side-nav">
+
+  {{/* For sections */}}
+  {{- range sort $siteSections ".Path" }}
+    {{ if and (.IsSection) (gt (len .Pages) 0) }}
+      <li class="for-side-nav">
+        {{ $nameToShow := .Title }}
+
+        {{ if eq (len $nameToShow) 0 }}
+          {{ $nameToShow = .File.ContentBaseName }}
+        {{ end }}
+
+        <details class="for-side-nav" {{ if or (.IsAncestor $currentPage) (eq $currentPage .) }} open {{ end }}>
+          <summary class="for-side-nav">
+            <div class="side-nav-item">
+              <a href="{{ .Permalink }}" {{ if (eq $currentPage .) }} class="currently-opened" {{ end }}>{{ $nameToShow }}</a>
+            </div>
+          </summary>
+
+          {{ $nextContext := (dict "currentPage" $currentPage "pages" .Pages) }}
+          {{ partial "side-nav-bar" $nextContext }}
+        </details>
+      </li>
+    {{ end }}
+  {{- end }}
+
+  {{/* For single pages */}}
+  {{- range sort $siteSections ".Path" }}
+    {{ if not (and (.IsSection) (gt (len .Pages) 0)) }}
+      <li class="for-side-nav">
+        {{ $nameToShow := .Title }}
+
+        {{ if eq (len $nameToShow) 0 }}
+          {{ $nameToShow = .File.ContentBaseName }}
+        {{ end }}
+
+        <div class="side-nav-item">
+          <a href="{{ .Permalink }}" {{ if (eq $currentPage .) }} class="currently-opened" {{ end }}>{{ $nameToShow }}</a>
+        </div>
+      </li>
+    {{ end }}
+  {{- end }}
+
+</ul>

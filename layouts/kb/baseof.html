@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ partial "kb-head.html" . }}
+  <body>
+    <aside id="side-nav-open">
+      <nav>
+        {{ partial "side-nav-bar" (dict "currentPage" . "pages" (.Site.GetPage (printf "/%s" .Section)).Pages) }}
+      </nav>
+    </aside>
+
+    <main>
+      {{ block "main" . }}
+      {{ end }}
+
+      {{ partial "footer.html" . }}
+    </main>
+  </body>
+</html>
