@@ -38,6 +38,22 @@ enableGitInfo = true
     url = "/tags/"
     weight = 4
 
+  [[menu.main]]
+    name = "Knowledge Base"
+    url = "/kb/"
+    weight = 5
+    [menu.main.params]
+      icon = "/assets/icons/external-link.svg"
+      target = "_blank"
+
+  [[menu.main]]
+    name = "Resume"
+    url = "/resume/"
+    weight = 6
+    [menu.main.params]
+      icon = "/assets/icons/external-link.svg"
+      target = "_blank"
+
 [taxonomies]
   tag = "tags"
 

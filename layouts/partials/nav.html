@@ -1,6 +1,6 @@
 <nav>
     {{ $pageURL := .RelPermalink }}
     {{- range .Site.Menus.main -}}
-        <span class="nowrap">[ <a class="nav-btn{{ if  eq $pageURL .URL }} active{{ end }}" href="{{ .URL }}">{{ .Name }}</a> ]</span>
+        <span class="nowrap">[ <a class="nav-btn{{ if  eq $pageURL .URL }} active{{ end }}"{{ with .Params.target }} target="{{ . }}" rel="noopener"{{ end }} href="{{ .URL }}">{{ .Name }}{{ with .Params.icon }} <span class="svg-icon"><img src="{{ . }}" alt="link-icon" /></span>{{ end }}</a> ]</span>
     {{- end -}}
 </nav>
