@@ -4,8 +4,8 @@ body {
     display: grid;
     grid-template-columns: 280px 1fr;
     column-gap: 10px;
-    color: #222222;
-    font-family: monospace, "Courier New", Courier;
+    color: #222;
+    font-family: monospace, 'Courier New', Courier;
     line-height: 1.6em;
     padding: 1em;
     margin: auto;
@@ -27,6 +27,19 @@ ul.for-side-nav {
 
 li:has(> input) {
     list-style: none;
+}
+
+a {
+    color: #1168cc;
+    text-decoration: none;
+}
+
+a:visited {
+    color: grey;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 summary.for-side-nav {
@@ -61,7 +74,7 @@ div.side-nav-item a.currently-opened {
 
 /* For expand button */
 summary.for-side-nav::after {
-    content: "";
+    content: '';
     border-right: 3px solid;
     border-bottom: 3px solid;
     position: absolute;
@@ -69,25 +82,12 @@ summary.for-side-nav::after {
     right: 0.75em;
     height: 0.5em;
     width: 0.5em;
-    transform: rotate(-45deg) translatey(-0.1em);
+    transform: rotate(-45deg) translateY(-0.1em);
     cursor: pointer;
 }
 
 details[open].for-side-nav > summary.for-side-nav::after {
-    transform: rotate(45deg) translatey(-0.3em);
-}
-
-a:visited {
-    color: grey;
-}
-
-a {
-    color: #1168cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    transform: rotate(45deg) translateY(-0.3em);
 }
 
 nav a:hover {
@@ -104,8 +104,8 @@ nav a.active {
 }
 
 code {
-    background-color: rgba(29, 28, 29, .04);
-    border: 1px solid rgba(29, 28, 29, .13);
+    background-color: rgb(29 28 29 / 4%);
+    border: 1px solid rgb(29 28 29 / 13%);
     border-radius: 3px;
     font-family: courier, monospace;
     padding: 0 3px;
@@ -127,10 +127,10 @@ img {
 }
 
 blockquote {
-    color: #666666;
+    color: #666;
     margin: 0;
     padding-left: 1em;
-    border-left: 0.5em #eeeeee solid;
+    border-left: 0.5em #eee solid;
 }
 
 hr {
@@ -141,8 +141,8 @@ hr {
 
 table {
     font-size: smaller;
-    border-spacing: 0px;
-    border: 1px solid #cccccc;
+    border-spacing: 0;
+    border: 1px solid #ccc;
     width: 100%;
     text-align: left;
 }
@@ -160,7 +160,7 @@ kbd {
     background-color: #eee;
     border-radius: 3px;
     border: 1px solid #b4b4b4;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 0 0 rgb(255 255 255 / 70%) inset;
     color: #333;
     display: inline-block;
     font-size: .85em;
@@ -172,11 +172,11 @@ kbd {
 
 /* CSS specific to table */
 section > table > tbody > tr:nth-of-type(2n+1) {
-    background-color: #eeeeee;
+    background-color: #eee;
 }
 
 section > table > tbody > tr th {
-    background-color: #dddddd;
+    background-color: #ddd;
 }
 
 section > table > tbody > tr:hover {
@@ -192,7 +192,7 @@ section > table > tbody > tr:hover {
 }
 
 .footnote-backref::before {
-    content: "go back ";
+    content: 'go back ';
 }
 
 .footnote-backref:hover {
@@ -205,19 +205,19 @@ section > table > tbody > tr:hover {
 }
 
 .footnote-ref::before {
-    content: "[";
+    content: '[';
 }
 
 .footnote-ref::after {
-    content: "]";
+    content: ']';
 }
 
 .nowrap {
-  white-space: nowrap ;
+    white-space: nowrap ;
 }
 
 .posted-by {
     font-size: x-small;
     padding: 10px 0;
-    color: #333333;
+    color: #333;
 }
