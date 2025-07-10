@@ -27,27 +27,75 @@ References are:
 
 ### With unknown type
 ```shell
-echo '22 05 68 65 6c 6c 6f' \
+echo '0a 0a 08 c0 f7 be c3 06 10 d0 86 03 10 01 1a 06 68 65 6c 6c 6f 21' \
   | xxd -r -p \
   | protoc --decode_raw
+```
 
-4: "hello"
+Its output will look like this:
+
+```text
+1 {
+  1: 1752153024
+  2: 50000
+}
+2: 1
+3: "hello!"
 ```
 
 ### With known type
 
-Content of `test.proto`
+Save `message.proto` with the following content:
 
 ```protobuf
-message Test {
-  optional string s = 4;
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+message Message {
+  enum State {
+    UNKNOWN = 0;
+    PENDING = 1;
+    PROCESSED = 2;
+    FAILED = 3;
+  }
+
+  google.protobuf.Timestamp receiveTime = 1;
+  State state = 2;
+  string content = 3;
 }
 ```
 
 ```shell
-echo '22 05 68 65 6c 6c 6f' \
+echo '0a 0a 08 c0 f7 be c3 06 10 d0 86 03 10 01 1a 06 68 65 6c 6c 6f 21' \
   | xxd -r -p \
-  | protoc --decode Test ./test.proto
-
-s: "hello"
+  | protoc --decode Message ./message.proto
 ```
+
+Its output will look like this:
+
+```text
+receiveTime {
+  seconds: 1752153024
+  nanos: 50000
+}
+state: PENDING
+content: "hello!"
+```
+
+## Encode protobuf bytes locally
+
+With the same `message.proto` mentioned above, we can decode a message like this:
+
+```shell
+echo '
+receiveTime {
+  seconds: 1752153024
+  nanos: 50000
+}
+state: 1
+content: "hello!"
+' | protoc --encode=Message ./message.proto | base64
+```
+
+Note: `base64` is used just to avoid binary junk being printed on terminal.
