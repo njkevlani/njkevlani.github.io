@@ -24,8 +24,8 @@ enableGitInfo = true
     weight = 1
 
   [[menu.main]]
-    name = "Blogs"
-    url = "/blogs/"
+    name = "Writings"
+    url = "/writings/"
     weight = 2
 
   [[menu.main]]
