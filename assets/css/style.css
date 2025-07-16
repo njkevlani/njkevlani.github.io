@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 body {
-    color: #000;
+    color: #222;
     font-family: monospace, 'Courier New', Courier;
     line-height: 1.6em;
     padding: 1em;
@@ -9,6 +9,29 @@ body {
     max-width: 72em;
     background: #fefefe;
     overflow-wrap: break-word;
+}
+
+body.for-side-nav {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    column-gap: 10px;
+    max-width: 100%;
+}
+
+aside.for-side-nav {
+    border-right: 1px solid;
+}
+
+li.for-side-nav {
+    list-style: none;
+}
+
+ul.for-side-nav {
+    padding-inline-start: 0.5em;
+}
+
+li:has(> input) {
+    list-style: none;
 }
 
 a {
@@ -37,6 +60,54 @@ nav a.active {
     color: black;
 }
 
+summary.for-side-nav {
+    /* Remove arrow for summary for chrome based browsers. */
+    list-style: none;
+    position: relative;
+}
+
+summary.for-side-nav::-webkit-details-marker {
+    /* Remove arrow for summary for safari. */
+    display: none;
+}
+
+div.side-nav-item {
+    padding: 0.2rem;
+}
+
+div.side-nav-item:hover {
+    background: #eee;
+    border-radius: 4px;
+}
+
+div.side-nav-item > a {
+    color: #1168cc;
+    text-decoration: none;
+}
+
+div.side-nav-item a.currently-opened {
+    font-weight: bold;
+    color: black;
+}
+
+/* For expand button */
+summary.for-side-nav::after {
+    content: '';
+    border-right: 3px solid;
+    border-bottom: 3px solid;
+    position: absolute;
+    top: 0.75em;
+    right: 0.75em;
+    height: 0.5em;
+    width: 0.5em;
+    transform: rotate(-45deg) translateY(-0.1em);
+    cursor: pointer;
+}
+
+details[open].for-side-nav > summary.for-side-nav::after {
+    transform: rotate(45deg) translateY(-0.3em);
+}
+
 code {
     color: #e01e5a;
     background-color: rgb(29 28 29 / 4%);
@@ -50,7 +121,7 @@ pre code {
     color: #000;
     display: block;
     padding: 8px;
-    line-height: 16px;
+    line-height: 20px;
 }
 
 pre {
@@ -65,7 +136,7 @@ img {
 blockquote {
     color: #666;
     margin: 0;
-    padding-left: 3em;
+    padding-left: 1em;
     border-left: 0.5em #eee solid;
 }
 

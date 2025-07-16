@@ -6,7 +6,7 @@ build:
 	html2pdf --background --paper A4 public/resume/index.html -o public/resume/pdf/Nilesh_Kevlani.pdf
 
 server:
-	hugo server --minify
+	hugo server --minify --disableLiveReload
 
 lint:
 	typos
