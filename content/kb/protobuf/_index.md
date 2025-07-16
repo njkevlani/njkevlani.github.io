@@ -102,7 +102,7 @@ state: 1
 content: "hello!"
 tags: "foo"
 tags: "bar"
-' | protoc --encode=Message ./message.proto | base64
+' | protoc --encode Message ./message.proto | base64
 ```
 
 Note: `base64` is used just to avoid binary junk being printed on terminal.
@@ -123,7 +123,7 @@ state: 1
 content: "hello!"
 tags: "foo"
 tags: "bar"
-' | protoc --encode=Message ./message.proto | protoc --decode=Message ./message.proto
+' | protoc --encode Message ./message.proto | protoc --decode Message ./message.proto
 ```
 
 This will print the following output:
@@ -152,7 +152,7 @@ state: 10
 content: "hello!"
 tags: "foo"
 tags: "bar"
-' | protoc --encode=Message ./message.proto | protoc --decode=Message ./message.proto
+' | protoc --encode Message ./message.proto | protoc --decode Message ./message.proto
 ```
 
 This will print the following output:
