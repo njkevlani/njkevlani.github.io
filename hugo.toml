@@ -23,15 +23,15 @@ enableGitInfo = true
     url = "/"
     weight = 1
 
-  [[menu.main]]
-    name = "Writings"
-    url = "/writings/"
-    weight = 2
+  # [[menu.main]]
+  #   name = "Writings"
+  #   url = "/writings/"
+  #   weight = 2
 
-  [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 3
+  # [[menu.main]]
+  #   name = "Tags"
+  #   url = "/tags/"
+  #   weight = 3
 
   [[menu.main]]
     name = "Knowledge Base"
