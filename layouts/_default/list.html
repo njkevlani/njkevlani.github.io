@@ -1,21 +1,24 @@
 {{ define "main" }}
 <section>
-    <h1>{{ if eq .Kind "term" }}#{{ end }}{{ .Title }}</h1>
-    <p>
-        <hr />
+  <h1>{{ if eq .Kind "term" }}#{{ end }}{{ .Title }}</h1>
 
-        {{ with .Content }}
-        {{ . }}
-            <hr />
-        {{ end }}
+  <hr />
 
-        {{ if gt (len .Pages) 0 }}
-            {{ range .Pages }}
-                {{ .Date.Format "2006-01-02" }} <a href="{{ .RelPermalink }}">{{ .Title }}</a><br />
-            {{ end }}
-        {{ else }}
-           Nothing in here at the moment.
-        {{ end }}
-    </p>
+  {{ with .Content }}
+  {{ . }}
+  <hr />
+  {{ end }}
+
+  {{ if gt (len .Pages) 0 }}
+    <ul>
+    {{ range .Pages }}
+      <li>
+      {{ if .Date }} {{ .Date.Format "2006-01-02" }} {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+    </ul>
+  {{ else }}
+  Nothing in here at the moment.
+  {{ end }}
 </section>
 {{ end }}

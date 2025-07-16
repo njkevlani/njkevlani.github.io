@@ -1,8 +1,6 @@
-+++
-title = "Final in Java"
-date = 2021-12-15
-lastmod = 2021-12-15
-+++
+---
+title: "Final in Java"
+---
 In `java`, normally you'd think if a variable is defined as `final`, its value will not change.
 
 For example, the content of `Main.java`:

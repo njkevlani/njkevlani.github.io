@@ -1,8 +1,6 @@
-+++
-title = "Read-only Channels"
-date = 2021-10-25
-lastmod = 2021-10-25
-+++
+---
+title: "Read-only Channels"
+---
 
 In golang, channels can be defined as read-only, write-only or read-write.
 

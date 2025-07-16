@@ -1,7 +1,5 @@
 ---
 title: "Rust"
-date: 2023-07-15T18:02:15+05:30
-tags: []
 ---
 
 # Learning resource

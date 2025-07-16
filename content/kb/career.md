@@ -1,7 +1,5 @@
 ---
 title: "Career"
-date: 2023-07-23T12:44:58+05:30
-tags: []
 ---
 
 Guides on unconventional software development career trajectories:

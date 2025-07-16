@@ -1,7 +1,5 @@
 ---
 title: "Linux"
-date: 2025-01-17T11:18:10+05:30
-tags: []
 ---
 
 # Setting up

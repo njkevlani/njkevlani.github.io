@@ -1,6 +1,5 @@
 ---
 title: "Golang"
-date: 2023-04-29T14:46:19+05:30
 ---
 
 Some of the learning resources for golang are:

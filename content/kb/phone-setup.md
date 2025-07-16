@@ -1,7 +1,5 @@
 ---
 title: "Phone Setup"
-date: 2024-10-06T04:21:22+05:30
-tags: []
 ---
 
 # Android

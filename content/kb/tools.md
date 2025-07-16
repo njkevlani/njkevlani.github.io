@@ -1,7 +1,5 @@
 ---
 title: "Tools"
-date: 2024-10-05T17:57:47+05:30
-tags: []
 ---
 
 # CLIs
