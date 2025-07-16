@@ -11,10 +11,23 @@
 
   {{ if gt (len .Pages) 0 }}
     <ul>
+
+    {{/* For sections */}}
     {{ range .Pages }}
+      {{ if and (.IsSection) (gt (len .Pages) 0) }}
       <li>
       {{ if .Date }} {{ .Date.Format "2006-01-02" }} {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>
       </li>
+      {{ end }}
+    {{ end }}
+
+    {{/* For single pages */}}
+    {{ range .Pages }}
+      {{ if not (and (.IsSection) (gt (len .Pages) 0)) }}
+      <li>
+      {{ if .Date }} {{ .Date.Format "2006-01-02" }} {{ end }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
     {{ end }}
     </ul>
   {{ else }}
