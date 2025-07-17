@@ -108,6 +108,33 @@ details[open].for-side-nav > summary.for-side-nav::after {
     transform: rotate(45deg) translateY(-0.3em);
 }
 
+#menu-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body.for-side-nav {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #menu-button {
+        display: inline-block;
+    }
+
+    #side-nav-open {
+        display: none;
+    }
+
+    #side-nav-open.active {
+      display: block;
+    }
+
+    aside.for-side-nav {
+        border-right: 0;
+    }
+}
+
 code {
     color: #e01e5a;
     background-color: rgb(29 28 29 / 4%);

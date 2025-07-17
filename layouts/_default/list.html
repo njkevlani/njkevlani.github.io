@@ -1,9 +1,5 @@
 {{ define "main" }}
 <section>
-  <h1>{{ if eq .Kind "term" }}#{{ end }}{{ .Title }}</h1>
-
-  <hr />
-
   {{ with .Content }}
   {{ . }}
   <hr />

@@ -8,6 +8,9 @@ build:
 server:
 	hugo server --minify --disableLiveReload
 
+server-lan:
+	hugo server --minify --disableLiveReload --bind 0.0.0.0
+
 lint:
 	typos
 	yamllint .

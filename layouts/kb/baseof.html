@@ -9,8 +9,33 @@
     </aside>
 
     <main>
+      <h1>
+          <button id="menu-button">≡</button>
+          {{ .Title }}
+      </h1>
+      <hr />
+
       {{ block "main" . }}
       {{ end }}
     </main>
+
+    <script>
+      var menuOpened = false;
+      document.addEventListener('DOMContentLoaded', function () {
+        const navbar = document.getElementById('side-nav-open');
+
+        var menuButton = document.getElementById('menu-button');
+        menuButton.addEventListener('click', function () {
+          navbar.classList.toggle('active');
+
+          menuOpened = !menuOpened;
+          if (menuOpened) {
+            menuButton.innerText = 'X'
+          } else {
+            menuButton.innerText = '≡'
+          }
+        });
+      });
+    </script>
   </body>
 </html>
