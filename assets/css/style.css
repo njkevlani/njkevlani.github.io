@@ -112,7 +112,7 @@ details[open].for-side-nav > summary.for-side-nav::after {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     body.for-side-nav {
         display: grid;
         grid-template-columns: 1fr;
@@ -127,7 +127,7 @@ details[open].for-side-nav > summary.for-side-nav::after {
     }
 
     #side-nav-open.active {
-      display: block;
+        display: block;
     }
 
     aside.for-side-nav {
