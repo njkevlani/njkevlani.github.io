@@ -1,0 +1,11 @@
+---
+# Disable no-hard-tabs for code blocks.
+no-hard-tabs:
+  code_blocks: false
+
+# Allow multiple h1 headigns in a document.
+single-h1: false
+
+# Do not check line length in code blocks.
+line-length:
+  code_blocks: false

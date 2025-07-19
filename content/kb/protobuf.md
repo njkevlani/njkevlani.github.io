@@ -1,29 +1,33 @@
 ---
 title: "Protobuf"
 ---
+
 # Distribute protobuf files
 
-A general idea is to distribute `.proto` files via a git repo and managing releases
-from this central place.
+A general idea is to distribute `.proto` files via a git repo and managing
+releases from this central place.
 
 What this does is:
+
 - Put all release related tooling at single place.
 - Version control `.proto` files.
 - Provide a review process on contracts.
 
 References are:
-- https://medium.com/namely-labs/how-we-build-grpc-services-at-namely-52a3ae9e7c35
-- https://stackoverflow.com/a/62128550/6645446
+
+- <https://medium.com/namely-labs/how-we-build-grpc-services-at-namely-52a3ae9e7c35>
+- <https://stackoverflow.com/a/62128550/6645446>
 
 # Useful tools
-- Online Protobuf Decoder - https://protobuf-decoder.netlify.app/
+
+- Online Protobuf Decoder - <https://protobuf-decoder.netlify.app/>
 
 # Tips and tricks
 
 ## Decode protobuf bytes locally
 
-
 ### With unknown type
+
 ```shell
 echo '0a 0a 08 c0 f7 be c3 06 10 d0 86 03 10 01 1a 06 68 65 6c 6c 6f 21 22 03 66 6f 6f 22 03 62 61 72' \
   | xxd -r -p \
@@ -88,7 +92,8 @@ tags: "bar"
 
 ## Encode protobuf bytes locally
 
-With the same `message.proto` mentioned above, we can decode a message like this:
+With the same `message.proto` mentioned above, we can decode a message like
+this:
 
 ```shell
 echo '
@@ -107,9 +112,11 @@ Note: `base64` is used just to avoid binary junk being printed on terminal.
 
 ### Caveats
 
-How will an enum value be decoded when encoded enum number is not present in schema that is used for decoding?
+How will an enum value be decoded when encoded enum number is not present in
+schema that is used for decoding?
 
-When encoding, we are passing a number for enum, but when decoding, we usually get a string for enum values. With example:
+When encoding, we are passing a number for enum, but when decoding, we usually
+get a string for enum values. With example:
 
 ```shell
 echo '
@@ -125,6 +132,7 @@ tags: "bar"
 ```
 
 This will print the following output:
+
 ```text
 receiveTime {
   seconds: 1752153024
@@ -136,9 +144,11 @@ tags: "foo"
 tags: "bar"
 ```
 
-Valid numbers for enum are 0-3 as per our definition from `message.proto`, but what if we pass an unknown value like `10`?
+Valid numbers for enum are 0-3 as per our definition from `message.proto`, but
+what if we pass an unknown value like `10`?
 
-Handling of this depends on implementation. `protoc` prints it as number. For example,
+Handling of this depends on implementation. `protoc` prints it as number. For
+example,
 
 ```shell
 echo '
@@ -154,6 +164,7 @@ tags: "bar"
 ```
 
 This will print the following output:
+
 ```text
 receiveTime {
   seconds: 1752153024

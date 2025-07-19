@@ -6,7 +6,7 @@ title: "Linux"
 
 ## Enabling `ssh-agent`
 
-```
+```shell
 systemctl --user enable ssh-agent.service
 ```
 
@@ -23,4 +23,5 @@ systemctl --user enable ssh-agent.service
 - `pipewire` for sound setup,
   - Need to do `systemctl --user enable --now pipewire.service`
 - `pass` & `pass-otp` for password management
-- `ttf-roboto-mono`, `noto-fonts` & `noto-fonts-emoji` for supporting larger range of fonts.
+- `ttf-roboto-mono`, `noto-fonts` & `noto-fonts-emoji` for supporting larger
+  range of fonts.

@@ -43,4 +43,5 @@ func consumer(c <-chan int) {
 }
 ```
 
-This can be useful in cases where we want to limit possible operation on channel passed to a function.
+This can be useful in cases where we want to limit possible operation on channel
+passed to a function.
