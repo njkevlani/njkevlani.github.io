@@ -15,10 +15,12 @@ lint:
 	typos
 	yamllint .
 	stylelint "**/*.css"
+	markdownlint-cli2 "**/*.md"
 
 fix-lint:
 	typos -w
 	stylelint --fix "**/*.css"
+	markdownlint-cli2 --fix "**/*.md"
 
 lint-ci:
 	stylelint "**/*.css"

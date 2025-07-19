@@ -1,7 +1,9 @@
 ---
 title: "Final in Java"
 ---
-In `java`, normally you'd think if a variable is defined as `final`, its value will not change.
+
+In `java`, normally you'd think if a variable is defined as `final`, its value
+will not change.
 
 For example, the content of `Main.java`:
 
@@ -21,7 +23,8 @@ class Example {
 }
 ```
 
-The above code should always print `10`, right? Well, that's not the case. At least in this case:
+The above code should always print `10`, right? Well, that's not the case. At
+least in this case:
 
 ```java
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -50,17 +53,20 @@ class Example {
 ```
 
 This will print:
-```
+
+```text
 10
 11
 ```
 
 Reason for this?
 
-> Deserialization is implemented by the JVM on a level below the basic language constructs.[^1]
+> Deserialization is implemented by the JVM on a level below the basic language
+> constructs.[^1]
 
-So, language rules do not apply to JVM. The object was initialized with `i = 10` and it was updated while deserialization despite being `final`.
+So, language rules do not apply to JVM. The object was initialized with `i = 10`
+and it was updated while deserialization despite being `final`.
 
-Code sample on GitHub: https://github.com/njkevlani/final-in-java-code.
+Code sample on GitHub: <https://github.com/njkevlani/final-in-java-code>.
 
-[^1]: https://stackoverflow.com/a/2904589/6645446
+[^1]: <https://stackoverflow.com/a/2904589/6645446>
