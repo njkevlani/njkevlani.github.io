@@ -29,3 +29,19 @@ title: "Tools"
 
 - Diagram to understand github repositories -
   <https://github.com/ahmedkhaleel2004/gitdiagram>
+
+# Cloud
+
+## `gcloud` tricks & tips
+
+Passing `--log-http` prints details about the http call being made underneath.
+
+It helps in understanding exactly what is being done behind the scenes, which
+can be helpful when replicating some of the `gcloud` functionality in some other
+program.
+
+For example,
+
+```shell
+gcloud --log-http compute regions list
+```
