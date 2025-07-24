@@ -1,0 +1,52 @@
+{{ define "main" }}
+  <div id="writing-heatmap" class="p-4">
+    <h2>Writing Activity</h2>
+    <div id="cal-heatmap"></div>
+  </div>
+
+<link rel="stylesheet" href="https://unpkg.com/cal-heatmap/cal-heatmap.css" />
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/cal-heatmap/dist/cal-heatmap.min.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/cal-heatmap/dist/plugins/Tooltip.min.js"></script>
+
+<script>
+  const cal = new CalHeatmap();
+  const events = [];
+
+  const writings = [
+    {{- range .Site.RegularPages -}}
+      { date: "{{ .Date.Format "2006-01-02" }}", lastmod: "{{ .Lastmod.Format "2006-01-02" }}" },
+    {{- end -}}
+  ];
+
+  writings.forEach(w => {
+    events.push(w.date);
+    events.push(w.lastmod);
+  });
+
+  console.log(events);
+
+  cal.paint({
+    data: {
+      source: events ,
+      x: (datum) => datum,
+      y: (any) => 1,
+    },
+    date: { start: new Date(new Date().getFullYear(), 1, 1), max: new Date() },
+    range:new Date().getMonth()+1,
+    domain: { type: "month"},
+    subDomain: {type: "day"},
+    scale: {
+      color: {
+        // Try some values: Purples, Blues, Turbo, Magma, etc ...
+        scheme: 'Cool',
+        type: 'linear',
+        domain: [0, 30],
+      },
+    },
+    <!-- verticalOrientation: false, -->
+    <!-- subDomainTextFormat: (date, value) => value || '', -->
+  }, [[Tooltip, {text: (timestamp, value, dayjsDate) => { return `${new Date(timestamp).toISOString().split('T')[0]} - ${value}`; } }]]);
+</script>
+{{ end }}
